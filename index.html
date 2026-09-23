@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Psicología funcional y acompañamiento emocional en Burjassot. Sesiones presenciales, a domicilio y online. Psicólogo colegiado COPCV.">
+    <meta name="keywords" content="psicólogo Burjassot, terapia Valencia, acompañamiento psicológico, crecimiento personal">
+    <meta name="author" content="Fran Camps - Psicólogo">
+    <title>PsicoCamps | Psicología Funcional en Burjassot</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8B1538;
+            --dark: #2d2d2d;
+            --light: #f8f8f8;
+            --border: #e0e0e0;
+            --text: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: #ffffff;
+        }
+
+        /* HEADER / NAVEGACIÓN */
+        header {
+            background: #ffffff;
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: #6d0f2a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 21, 56, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* HERO */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #6d0f2a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(139, 21, 56, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--light);
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* SERVICIOS */
+        .services {
+            background: var(--light);
+            padding: 4rem 2rem;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        .section-title span {
+            color: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(139, 21, 56, 0.12);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* SOBRE MÍ */
+        .about {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .credentials {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .credential-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .credential-item::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* PROCESO */
+        .process {
+            background: var(--light);
+            padding: 4rem 2rem;
+        }
+
+        .process-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* CONTACTO */
+        .contact {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            text-align: center;
+            color: var(--dark);
+            margin-bottom: 2rem;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 3px solid var(--primary);
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: #6d0f2a;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: #6d0f2a;
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-credentials {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        /* UTILIDADES */
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .highlight {
+            background: rgba(139, 21, 56, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Logo PsicoCamps" style="width: 40px; height: 40px; object-fit: contain;">
+                PsicoCamps
+            </a>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#contacto" class="cta-btn">Contactar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Psicología funcional para tu <span>bienestar</span></h1>
+            <p>Soy Fran, psicólogo colegiado en el COPCV. Te acompaño en tus procesos emocionales con un enfoque integral basado en Gestalt, ACT y análisis funcional. Sesiones presenciales, a domicilio y online en la zona de Burjassot y Valencia.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/34623195567?text=Hola%20Fran,%20me%20gustaría%20conocer%20más%20sobre%20tus%20servicios" class="btn-primary">Contáctame por WhatsApp</a>
+                <a href="https://share.google/d5M7tuCTKjh7Xo3HX" class="btn-secondary">Ver en Google Maps</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="foto.png" alt="Foto de Fran Camps" style="background: #f0f0f0;">
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services" id="servicios">
+        <div class="services-container">
+            <h2 class="section-title">Mis <span>Servicios</span></h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Acompañamiento Psicológico</h3>
+                    <p>Te acompaño en tus procesos vitales, transiciones y cambios. Un espacio de escucha activa donde explorar lo que te preocupa y encontrar tu propio camino hacia el bienestar.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Terapia Psicológica Funcional</h3>
+                    <p>Basada en ACT, Gestalt y análisis funcional del comportamiento. Trabajamos sobre cómo tus patrones emocionales y conductuales impactan en tu vida, mejorando tu relación con ellos.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Crecimiento Personal</h3>
+                    <p>Desarrollo de recursos internos, clarificación de valores, mejora de relaciones interpersonales y construcción de una vida más alineada con lo que realmente importa.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Asesoramiento Psicológico</h3>
+                    <p>Orientación en decisiones importantes, conflictos relacionales y exploración de patrones de conducta. Un diálogo reflexivo para encontrar tu propia respuesta.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Sesiones Presenciales</h3>
+                    <p>En mi consulta de Burjassot. Un espacio seguro, cómodo y confidencial donde trabajamos en profundidad en tus procesos emocionales y personales.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Sesiones a Domicilio y Online</h3>
+                    <p>Flexibilidad para adaptarme a tu vida. Ya sea en tu casa, por videollamada o en consulta, el trabajo terapéutico es igualmente profundo y transformador.</p>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <p><strong>¿Cuál es mi tarifa?</strong> Depende de varios factores: tipo de sesión, duración y contexto. <strong>Contacta conmigo sin compromiso</strong> y hablaremos sobre qué necesitas y cómo podemos trabajar juntos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="about" id="sobre-mi">
+        <div class="about-image">
+            <img src="foto.png" alt="Fran Camps" style="background: #f0f0f0;">
+        </div>
+        <div class="about-text">
+            <h2>Sobre mí</h2>
+            <p>Soy psicólogo colegiado en el Colegio Oficial de Psicólogos de la Comunidad Valenciana (COPCV). Me dedico a acompañar a personas en sus procesos emocionales y personales con un enfoque integral y funcional.</p>
+            
+            <p>Mi práctica se fundamenta en tres pilares:</p>
+            
+            <div class="credentials">
+                <div class="credential-item"><strong>Gestalt (enfoque Francesetti):</strong> Un trabajo centrado en la conciencia del presente y la responsabilidad personal en tus elecciones.</div>
+                <div class="credential-item"><strong>ACT (Terapia de Aceptación y Compromiso):</strong> Aprendes a vivir con tus emociones sin que te paralicen, enfocándote en lo que realmente importa.</div>
+                <div class="credential-item"><strong>Análisis Funcional del Comportamiento:</strong> Entender cómo tus patrones de conducta se relacionan con tu contexto y qué cambios te benefician.</div>
+            </div>
+
+            <p style="margin-top: 1.5rem;"><strong>Formación:</strong></p>
+            <div class="credentials">
+                <div class="credential-item">Grado en Psicología (Universidad)</div>
+                <div class="credential-item">Máster en Psicología General Sanitaria (en curso)</div>
+                <div class="credential-item">Formaciones complementarias en ACT, Gestalt e intervención psicológica</div>
+            </div>
+
+            <p style="margin-top: 1.5rem;">Creo en la psicología como herramienta de crecimiento. No viene de ser "roto" o "enfermo", sino de estar dispuesto a entenderte mejor y vivir con más coherencia.</p>
+        </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="process" id="proceso">
+        <div class="process-container">
+            <h2 class="section-title">¿Cómo es el <span>Proceso</span>?</h2>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Contacto</h3>
+                    <p>Te contactas conmigo por WhatsApp, teléfono o formulario. Aclaramos qué necesitas y si puedo ayudarte.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Primera Sesión</h3>
+                    <p>Nos conocemos. Escucho tu historia, entiendo tu contexto y valoramos juntos cómo trabajar.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Proceso Terapéutico</h3>
+                    <p>Trabajamos sesión a sesión. Exploramos patrones, expandimos recursos y buscas tu propio camino.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Autonomía</h3>
+                    <p>Cuando ya tienes herramientas y claridad, cerramos el trabajo. Tú conduces tu vida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
+        <h2>Conectemos</h2>
+        
+        <div class="contact-methods">
+            <div class="contact-card">
+                <h3>WhatsApp</h3>
+                <p>La forma más rápida de contactar conmigo.</p>
+                <a href="https://wa.me/34623195567?text=Hola%20Fran,%20me%20gustaría%20agendar%20una%20sesión">+34 623 195 567</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Teléfono</h3>
+                <p>Si prefieres hablar directamente.</p>
+                <a href="tel:+34623195567">+34 623 195 567</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>Google Maps</h3>
+                <p>Ver mi ubicación en Burjassot.</p>
+                <a href="https://share.google/d5M7tuCTKjh7Xo3HX" target="_blank">Ver perfil</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <h3 style="color: var(--dark); margin-bottom: 1.5rem;">Sígueme en redes</h3>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@psicocamps" target="_blank" title="TikTok">🎬</a>
+                <a href="https://www.instagram.com/psicocamps/" target="_blank" title="Instagram">📸</a>
+                <a href="https://www.google.com/maps/search/psicocamps" target="_blank" title="Google">🗺️</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <strong>PsicoCamps</strong> | Psicología Funcional en Burjassot, Valencia
+            </div>
+            <div class="footer-text">
+                <a href="tel:+34623195567" style="color: white; text-decoration: none;">+34 623 195 567</a> | 
+                <a href="https://wa.me/34623195567" style="color: white; text-decoration: none;">WhatsApp</a>
+            </div>
+            <div class="footer-credentials">
+                Psicólogo colegiado en el COPCV | Acompañamiento Psicológico | Terapia Funcional | Crecimiento Personal
+            </div>
+            <div class="footer-credentials">
+                © 2024 PsicoCamps. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
